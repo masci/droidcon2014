@@ -14,4 +14,4 @@ class TweetViewSet(viewsets.ReadOnlyModelViewSet):
         if tweet_id is not None:
             qs = qs.filter(tweet_id__gt=tweet_id)
 
-        return qs
+        return qs.order_by('-tweet_id')
